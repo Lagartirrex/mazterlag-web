@@ -35,9 +35,9 @@ p.big b{color:var(--c);font-weight:700}p.big em{font-style:normal;color:var(--g)
 .next-t{margin-top:18px;border:2px dashed #3a3f3f;border-radius:var(--r-l);padding:16px 20px;color:var(--mu);display:flex;gap:6px 14px;flex-wrap:wrap;align-items:baseline}
 .next-t b{color:var(--c)}
 .join .social{list-style:none;margin:28px 0 0;padding:0;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.sq-link{display:flex;align-items:center;gap:10px;min-height:56px;padding:10px 18px 10px 12px;background:var(--s1);border:1px solid var(--bd);border-radius:var(--r-m);text-decoration:none;font:700 16px var(--fs);color:var(--c);transition:transform .2s,border-color .2s,background .2s}
-.sq-link:hover{transform:translateY(-3px);border-color:var(--g);background:var(--s2)}
-.sq-link svg{width:26px;height:26px;display:block;flex:none;transition:color .2s}.sq-link:hover svg{color:var(--g)}
+.sq-link{display:flex;align-items:center;gap:10px;min-height:56px;padding:10px 18px 10px 12px;background:var(--g);color:var(--k);border-radius:var(--r-s);text-decoration:none;font:700 16px var(--fs);transition:background .2s}
+.sq-link:hover{background:var(--c)}
+.sq-link svg{width:26px;height:26px;display:block;flex:none}
 .t.sm{font-size:clamp(34px,4vw,46px)}
 
 /* Coaching: una sola tarjeta con lo que incluye y el precio */

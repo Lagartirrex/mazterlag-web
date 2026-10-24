@@ -17,3 +17,6 @@
 footer.f{padding:36px 0;border-top:1px solid var(--bd);color:var(--mu);font-size:14px}
 .fr{display:flex;flex-wrap:wrap;gap:16px 36px;justify-content:space-between;align-items:center}.fr nav{display:flex;flex-wrap:wrap;gap:8px 22px}
 .rg{margin:16px 0 0;font-size:13px}
+
+/* Menú móvil (js/nav.js): en escritorio el panel es transparente y el botón no existe */
+.menu{display:contents}.burger{display:none}

@@ -1,10 +1,10 @@
 /* Responsive (celular y tablet) y preferencia de menos movimiento */
 @media(max-width:860px){
-.nav{flex-wrap:wrap}.tabs{order:3;width:100%}
+.nav{flex-wrap:wrap}.tabs{order:3;width:100%;flex-wrap:nowrap;overflow-x:auto}
 .bg,.pcols,.pil,.two,.lu,.lu2{grid-template-columns:1fr}.team{grid-template-columns:1fr 1fr}
 }
 @media(max-width:860px){.cols,#posts{grid-template-columns:1fr}.stats{margin-top:48px}}
-@media(max-width:860px){.dg{grid-template-columns:1fr}#posts{grid-template-columns:1fr 1fr}.tabs{flex-wrap:wrap;overflow:visible}.hero2 .art{width:100%;opacity:.45;height:460px}}
+@media(max-width:860px){.dg{grid-template-columns:1fr}#posts{grid-template-columns:1fr 1fr}}
 /* Builds: tarjetas chicas, 4 o 5 por fila en pantallas grandes */
 @media(min-width:861px){
 body[data-lib] .bg{grid-template-columns:repeat(3,1fr);gap:14px}
@@ -21,9 +21,119 @@ body[data-lib] .bb h3{font-size:16px}
 .art{height:84px}.art svg.mas{width:64px;height:64px}.art.im{height:auto;aspect-ratio:4/3}
 .fil{gap:8px}
 .price{padding:22px}.pbuy{border-left:0;padding-left:0;border-top:1px solid var(--bd);padding-top:24px}
-.sq-link{flex:1 1 42%}.fil input,.fil select{min-width:0;flex:1 1 45%}
+.fil input,.fil select{min-width:0;flex:1 1 45%}
 }
 /* Aparición al scrollear (js/reveal.js): la clase html.js-reveal la pone el script, sin JS todo se ve */
 html.js-reveal .rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;transition-delay:var(--d,0ms)}
 html.js-reveal .rv.rv-in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}html.js-reveal .rv{opacity:1;transform:none}}
+
+/* ===== Celular: menú hamburguesa (con JS) ===== */
+@media(max-width:860px){
+.js-nav .nav{flex-wrap:nowrap;gap:12px;min-height:44px}
+.js-nav .brand{position:relative;z-index:2;font-size:24px}
+.js-nav .burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;position:relative;z-index:2;width:48px;height:48px;margin:-2px -8px -2px 0;padding:0;background:none;border:0;border-radius:var(--r-s);color:var(--c);cursor:pointer}
+.burger span{display:block;width:26px;height:3px;border-radius:2px;background:currentColor;transition:transform .25s,opacity .2s}
+.nav.open .burger span:nth-child(1){transform:translateY(9px) rotate(45deg)}
+.nav.open .burger span:nth-child(2){opacity:0}
+.nav.open .burger span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
+.js-nav .menu{display:none}
+.js-nav .nav.open .menu{display:flex;flex-direction:column;position:fixed;inset:0;z-index:1;background:var(--k);padding:calc(78px + env(safe-area-inset-top,0px)) 20px calc(28px + env(safe-area-inset-bottom,0px));overflow-y:auto;overscroll-behavior:contain}
+.js-nav .menu .tabs{order:0;width:100%;margin:0;padding:0;flex-direction:column;gap:0;overflow:visible}
+.js-nav .menu .tabs a,.js-nav .menu .tabs .soon{display:flex;justify-content:flex-start;align-items:center;min-height:60px;padding:8px 4px;border-bottom:1px solid var(--bd);border-radius:0;font:400 36px/1 var(--fd);letter-spacing:.04em;color:var(--c);text-decoration:none}
+.js-nav .menu .tabs a[aria-current]{color:var(--g);text-decoration:none}
+.js-nav .menu .tabs .soon{opacity:.55;gap:12px}.js-nav .menu .tabs .soon em{font:600 13px var(--fs);letter-spacing:.08em;text-transform:uppercase;margin:0}
+.js-nav .menu>.btn{margin-top:28px;min-height:56px;font-size:17px}
+html.nav-open{overflow:hidden}
+}
+
+/* ===== Celular (hasta 760px) ===== */
+@media(max-width:760px){
+.wrap{padding:0 16px}
+.top{padding:12px 0}
+.sec{padding-top:56px}
+.hd{padding:28px 0 20px}.hd h1{font-size:clamp(44px,13vw,56px)}
+.t{font-size:clamp(36px,10vw,44px)}
+/* Sin JS: fila de links deslizable bajo el logo */
+.nav{gap:10px 12px}.nav>.btn{min-height:44px;padding:8px 14px}.tabs{margin:0 -16px;padding:0 16px;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}
+/* Inicio: imagen arriba y texto debajo */
+.hero2{padding:0}
+.hero2 .art{position:relative;right:auto;width:calc(100% + 32px);height:230px;margin:0 -16px;-webkit-mask-image:linear-gradient(#000 55%,transparent);mask-image:linear-gradient(#000 55%,transparent);-webkit-mask-composite:source-over;mask-composite:add}
+.hero2 .hc{padding-top:0;margin-top:-34px}
+.eb{font-size:13px;letter-spacing:.1em;margin-bottom:12px}
+.hero2 h1{font-size:clamp(52px,16vw,68px);max-width:none;margin-bottom:14px}
+.hero2 .lead{font-size:17px;margin-bottom:22px}
+.cta-row{display:flex;flex-direction:column;gap:12px}
+.cta-row .btn.sq{width:100%;min-height:52px;font-size:14px}
+.cta-row .lk{margin:0;display:flex;align-items:center;justify-content:center;min-height:52px;border:1px solid var(--bd);border-radius:6px;text-decoration:none;font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:28px;max-width:none;padding:16px 8px;text-align:center;align-items:start}
+.stats:has(div:nth-child(4)){grid-template-columns:1fr 1fr;row-gap:16px}
+.stats div{align-items:center;gap:4px}.stats b{font-size:36px}.stats span{font-size:14px;line-height:1.25}
+/* Lo último: tarjetas bajas */
+.lu,.lu2{gap:10px}.lu2{margin-top:10px}
+.lc{grid-template-columns:72px 1fr;gap:14px;padding:10px;min-height:92px}
+.lc .lim{aspect-ratio:1}
+.lc small{font-size:14px}.lc h3{font-size:17px;margin-top:2px}
+.cta-card{padding:18px}.cta-card h3{font-size:21px}
+.next-t{margin-top:10px;padding:14px 16px}
+.cols{gap:36px}
+p.big{font-size:clamp(26px,8vw,34px)}
+/* Grillas: 2 columnas */
+.bg,#posts,.team{gap:10px}
+#posts{grid-template-columns:1fr 1fr}.igc span{font-size:16px;margin-top:8px}
+.team{grid-template-columns:1fr 1fr}
+.team .tm:last-child:nth-child(odd){grid-column:1/-1;justify-self:center;width:calc(50% - 5px)}
+.tm{padding:10px}.tm h3{font-size:19px}.tm p{font-size:15px}.tm .pa img{width:80px}
+.pil{gap:22px;margin-bottom:36px}
+.more-link .btn{width:100%}
+/* Filtros: buscador entero y selects de a dos */
+.fil{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fil input{grid-column:1/-1;width:100%;min-width:0}
+.fil select{width:100%;min-width:0;min-height:48px}
+.fil select:last-of-type:nth-of-type(odd){grid-column:1/-1}
+.fil .btn{grid-column:1/-1;width:100%}
+.tg span{font-size:13px}.bb h3{font-size:16px}
+.btn.sm{min-height:44px}
+/* Detalle */
+.dt{padding:12px 0 56px}.dg{gap:20px}
+.cv{width:min(62%,250px);margin:0 auto}
+.dt .acts,.dg .acts{flex-direction:column;gap:10px}.dg .acts .btn{width:100%}
+.dt h2{font-size:30px}.more{font-size:32px;margin-top:44px}
+/* Coaching */
+.price{padding:20px 18px}
+.price b{font-size:88px}
+.price h2{font-size:32px}
+.pbuy .btn.big{width:100%;min-height:56px}
+.pay-chips li{font-size:15px}
+/* Unirse */
+.join{margin:64px 0 48px;padding:0}.join h2{font-size:clamp(40px,12vw,52px)}
+.join .social{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
+.sq-link{width:100%;justify-content:center;min-height:60px;padding:10px 12px}
+/* Pie */
+.brand{min-height:44px}.bcr{gap:0 8px;align-items:center}.bcr a{display:inline-flex;align-items:center;min-height:44px}
+footer.f{padding:32px 0 28px;font-size:16px}
+.fr{flex-direction:column;align-items:stretch;gap:12px}
+.fr .brand{margin:0}
+.fr nav{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--bd)}
+.fr nav[aria-label=Redes]{grid-template-columns:1fr 1fr;column-gap:16px}
+.fr nav a{display:flex;align-items:center;min-height:48px;text-decoration:none}
+.fr nav[aria-label=Legales] a{border-bottom:1px solid var(--bd)}
+.rg{font-size:14px;margin-top:20px}
+/* Agenda */
+.two{grid-template-columns:1fr;gap:0}
+.pg{padding-bottom:48px}.pg>a{display:inline-flex;align-items:center;min-height:44px}
+.step h2{font-size:30px}.stp li{font-size:13px}
+.actions .btn{width:100%}.actions .btn+.btn{margin-top:10px}
+.total{font-size:56px}
+}
+
+/* ===== Celulares angostos (hasta 420px) ===== */
+@media(max-width:420px){
+.hero2 .art{height:200px}
+.hero2 h1{font-size:clamp(46px,15vw,58px)}
+.stats b{font-size:32px}.stats span{font-size:13px}
+.lc{grid-template-columns:64px 1fr}
+.bb{padding:8px 10px 10px}
+.sq-link{font-size:15px;gap:8px;padding:10px 8px}
+.js-nav .menu .tabs a,.js-nav .menu .tabs .soon{font-size:32px}
+}
