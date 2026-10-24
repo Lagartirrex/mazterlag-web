@@ -30,10 +30,11 @@
         <p>${esc(x.d)}</p>
         ${paragraphs}
         ${x.src ? '' : list}
-        ${key === 'guias' ? guideActions(x, true) : ''}
+        ${key === 'guias' ? guideActions(x) : ''}
       </div>
     </div>
     ${rel.length ? `<h2 class="t more">Seguí con</h2><div class="bg">${rel.map((y, i) => card(key, y, i)).join('')}</div>` : ''}`;
   document.title = x.t + ' | MazterLag';
   initMascots($('#det'));
+  if (typeof applyLinks === 'function') applyLinks();
 })();

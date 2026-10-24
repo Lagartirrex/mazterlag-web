@@ -1,9 +1,10 @@
 :root{--r-s:8px;--r-m:10px;--r-l:12px}
 /* Base: variables de marca, reset, tipografía, botones y formularios */
-:root{--k:#090B0B;--s1:#121515;--s2:#1A1D1D;--bd:#262b2b;--v:#512C7D;--vd:#391F58;--vx:#1d0f33;--c:#F1ECE1;--g:#9BCB3C;--gd:#456B15;--l:#E5DFEC;--mu:#a9adad;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--fd:"Bebas Neue",Impact,"Arial Narrow",sans-serif;--fs:"Source Sans 3",system-ui,sans-serif;--k:#090B0B;--s1:#121515;--s2:#1A1D1D;--bd:#262b2b;--v:#512C7D;--vd:#391F58;--vx:#1d0f33;--c:#F1ECE1;--g:#9BCB3C;--gd:#456B15;--l:#E5DFEC;--mu:#a9adad;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *,*::before,*::after{box-sizing:inherit}
 body{margin:0;background:var(--k);color:var(--c);font:400 17px/1.6 "Source Sans 3",system-ui,sans-serif}
-h1,h2,h3{font-family:Outfit,"Arial Black",system-ui,sans-serif;font-weight:800;letter-spacing:-.01em;line-height:1.08;margin:0}
+h1,h2{font-family:var(--fd);font-weight:400;letter-spacing:.03em;line-height:1;margin:0}
+h3{font-family:var(--fs);font-weight:700;letter-spacing:0;line-height:1.2;margin:0}
 a{color:inherit}[hidden]{display:none!important}
 :focus-visible{outline:3px solid var(--g);outline-offset:3px}
 .wrap{max-width:1120px;margin:0 auto;padding:0 20px}

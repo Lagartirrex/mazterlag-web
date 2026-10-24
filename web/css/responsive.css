@@ -7,23 +7,23 @@
 @media(max-width:860px){.dg{grid-template-columns:1fr}#posts{grid-template-columns:1fr 1fr}.tabs{flex-wrap:wrap;overflow:visible}.hero2 .art{width:100%;opacity:.45;height:460px}}
 /* Builds: tarjetas chicas, 4 o 5 por fila en pantallas grandes */
 @media(min-width:861px){
-body[data-lib="builds"] .bg{grid-template-columns:repeat(4,1fr);gap:14px}
-body[data-lib="builds"] .art:not(.im){height:110px}
-body[data-lib="builds"] .art svg.mas{width:72px;height:72px}
-body[data-lib="builds"] .art span{font-size:12px;padding:1px 10px}
-body[data-lib="builds"] .bb{padding:10px 12px 14px}
-body[data-lib="builds"] .bb h3{font-size:16px}
-body[data-lib="builds"] .bb p{font-size:13px;margin:4px 0 6px}
-body[data-lib="builds"] .bb small{font-size:13px}
+body[data-lib] .bg{grid-template-columns:repeat(3,1fr);gap:14px}
+body[data-lib] .art:not(.im){height:84px}
+body[data-lib] .art svg.mas{width:64px;height:64px}
+body[data-lib] .bb{padding:10px 12px 12px}
+body[data-lib] .bb h3{font-size:16px}
 }
-@media(min-width:1000px){body[data-lib="builds"] .bg{grid-template-columns:repeat(5,1fr)}}
+@media(min-width:1000px){body[data-lib] .bg{grid-template-columns:repeat(5,1fr)}}
 @media(max-width:860px){
 /* Tarjetas de guías y builds más chicas en celular: 2 columnas, sin descripción */
 .bg{grid-template-columns:1fr 1fr;gap:12px}
-.bb{padding:10px 12px 14px}.bb h3{font-size:15px;line-height:1.2}.bb p{display:none}.bb small{font-size:13px}
-.art{height:110px}.art svg.mas{width:72px;height:72px}.art.im{height:auto;aspect-ratio:4/5}
-.acts{padding:0 12px 12px}.btn.sm{font-size:13px;padding:6px 10px}.fil{gap:8px}
+.bb{padding:10px 12px 12px}.bb h3{font-size:15px;line-height:1.2}.bb p{display:none}.tg span{font-size:11px;padding:1px 8px}
+.art{height:84px}.art svg.mas{width:64px;height:64px}.art.im{height:auto;aspect-ratio:4/3}
+.fil{gap:8px}
 .price{padding:22px}.pbuy{border-left:0;padding-left:0;border-top:1px solid var(--bd);padding-top:24px}
 .sq-link{flex:1 1 42%}.fil input,.fil select{min-width:0;flex:1 1 45%}
 }
-@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+/* Aparición al scrollear (js/reveal.js): la clase html.js-reveal la pone el script, sin JS todo se ve */
+html.js-reveal .rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;transition-delay:var(--d,0ms)}
+html.js-reveal .rv.rv-in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}html.js-reveal .rv{opacity:1;transform:none}}
