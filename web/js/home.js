@@ -5,6 +5,8 @@
   const [guias, builds] = await Promise.all([loadCollection('guias'), loadCollection('builds')]);
   $('#s1').textContent = guias.length;
   $('#s2').textContent = builds.length;
+  $('#s1l').textContent = guias.length === 1 ? 'Guía gratis' : 'Guías gratis';
+  $('#s2l').textContent = builds.length === 1 ? 'Build gratis' : 'Builds gratis';
 
   /* Rellena una tarjeta de "Lo último" con imagen, título y enlace */
   function fill(sel, { img, title, href }) {

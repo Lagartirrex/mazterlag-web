@@ -26,15 +26,14 @@
       <div>${x.src ? `<img class="cv" src="${esc(safeUrl(x.src))}" alt="${esc(x.t)}">` : ''}</div>
       <div>
         <h1>${esc(x.t)}</h1>
-        <div class="meta"><span>${esc(x.r)}</span><span>${esc(x.k)}</span><span>Parche de ejemplo</span></div>
+        <div class="meta"><span>${esc(x.r)}</span><span>${esc(x.k)}</span></div>
         <p>${esc(x.d)}</p>
         ${paragraphs}
         ${x.src ? '' : list}
-        ${x.pdf ? `<p class="pdf-row"><a class="btn big" href="${esc(safeUrl(x.pdf))}" target="_blank" rel="noopener">Descargar PDF</a></p>` : ''}
+        ${key === 'guias' ? guideActions(x, true) : ''}
       </div>
     </div>
-    <h2 class="t more">Seguí con</h2>
-    <div class="bg">${rel.map((y, i) => card(key, y, i)).join('')}</div>`;
+    ${rel.length ? `<h2 class="t more">Seguí con</h2><div class="bg">${rel.map((y, i) => card(key, y, i)).join('')}</div>` : ''}`;
   document.title = x.t + ' | MazterLag';
   initMascots($('#det'));
 })();

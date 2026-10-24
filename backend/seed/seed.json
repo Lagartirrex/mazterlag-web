@@ -1,69 +1,16 @@
 {
   "guias": [
     {
-      "id": "abandonar-adc",
-      "titulo": "Cuándo abandonar a tu ADC",
-      "descripcion": "Temporada 16. Cuándo dejar de proteger a tu ADC y jugar para el resto del equipo.",
-      "rol": "Support",
-      "campeon": "General",
-      "tipo": "Fundamentos",
-      "imagen": "/uploads/guias/g1.jpg",
-      "contenido": "",
-      "publicado": true
-    },
-    {
-      "id": "irelia",
-      "titulo": "Cómo jugar Irelia y dominar la grieta",
-      "descripcion": "Temporada 16. Lo esencial para jugar Irelia con criterio.",
+      "id": "urgot",
+      "titulo": "Guía de Urgot: estrategia, matchups y más",
+      "descripcion": "Parche 26.21. Identidad, combos, runas, objetos, matchups y macro, por el coach Bruno.",
       "rol": "Top",
-      "campeon": "Irelia",
+      "campeon": "Urgot",
       "tipo": "Campeón",
-      "imagen": "/uploads/guias/g2.jpg",
+      "imagen": "/uploads/guias/guia-urgot.jpg",
       "contenido": "",
-      "publicado": true
-    },
-    {
-      "id": "mordekaiser",
-      "titulo": "Cómo jugar Mordekaiser",
-      "descripcion": "Season 16 master en minutos: lo que tenés que saber para dominar la grieta.",
-      "rol": "Top",
-      "campeon": "Mordekaiser",
-      "tipo": "Campeón",
-      "imagen": "/uploads/guias/g3.jpg",
-      "contenido": "",
-      "publicado": true
-    },
-    {
-      "id": "kaisa",
-      "titulo": "Cómo jugar Kai'Sa",
-      "descripcion": "Temporada 16. Lo esencial para jugar Kai'Sa y dominar la grieta.",
-      "rol": "ADC",
-      "campeon": "Kai'Sa",
-      "tipo": "Campeón",
-      "imagen": "/uploads/guias/g5.jpg",
-      "contenido": "",
-      "publicado": true
-    },
-    {
-      "id": "garen-lore",
-      "titulo": "¿Sabías qué…? El secreto de Garen",
-      "descripcion": "Un dato de lore sobre Garen, Demacia y su familia.",
-      "rol": "Top",
-      "campeon": "Garen",
-      "tipo": "Lore",
-      "imagen": "/uploads/guias/g4.jpg",
-      "contenido": "",
-      "publicado": true
-    },
-    {
-      "id": "elise-lore",
-      "titulo": "¿Sabías qué…? El precio de la belleza de Elise",
-      "descripcion": "Un dato de lore sobre Elise y su pacto con Vilemaw.",
-      "rol": "Jungla",
-      "campeon": "Elise",
-      "tipo": "Lore",
-      "imagen": "/uploads/guias/g7.jpg",
-      "contenido": "",
+      "pdf": "/uploads/pdfs/guia-urgot.pdf",
+      "youtube": "",
       "publicado": true
     }
   ],

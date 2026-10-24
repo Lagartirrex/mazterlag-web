@@ -22,8 +22,10 @@ test('salud, enlaces, 404 y 405', async t => {
 test('datos iniciales: guías, builds, publicaciones e imágenes', async t => {
   const s = await boot({}, { seed: true }); t.after(s.close);
   const g = (await s.call('GET', '/api/guias')).json;
-  assert.equal(g.total, 6);
-  assert.match(g.items[0].imagen, /^http:\/\/127\.0\.0\.1:\d+\/uploads\/guias\/g1\.jpg$/);
+  assert.equal(g.total, 1);
+  assert.match(g.items[0].imagen, /^http:\/\/127\.0\.0\.1:\d+\/uploads\/guias\/guia-urgot\.jpg$/);
+  assert.match(g.items[0].pdf, /^http:\/\/127\.0\.0\.1:\d+\/uploads\/pdfs\/guia-urgot\.pdf$/);
+  assert.equal(g.items[0].youtube, '');
   assert.equal((await s.call('GET', '/api/builds')).json.total, 5);
   const ig = (await s.call('GET', '/api/instagram?limit=4')).json;
   assert.equal(ig.posts.length, 4);
@@ -36,11 +38,12 @@ test('datos iniciales: guías, builds, publicaciones e imágenes', async t => {
 
 test('filtros y búsqueda sin distinguir tildes', async t => {
   const s = await boot({}, { seed: true }); t.after(s.close);
-  assert.equal((await s.call('GET', '/api/guias?rol=ADC')).json.total, 1);
-  assert.equal((await s.call('GET', '/api/guias?q=como%20jugar')).json.total, 3);
-  assert.equal((await s.call('GET', '/api/guias?q=sabias')).json.total, 2);
-  assert.equal((await s.call('GET', '/api/guias?tipo=lore&rol=Top')).json.total, 1);
-  assert.equal((await s.call('GET', '/api/guias?limit=2&offset=1')).json.items.length, 2);
+  assert.equal((await s.call('GET', '/api/builds?rol=ADC')).json.total, 1);
+  assert.equal((await s.call('GET', '/api/builds?q=build%20de')).json.total, 5);
+  assert.equal((await s.call('GET', '/api/guias?q=estrategia')).json.total, 1);
+  assert.equal((await s.call('GET', '/api/guias?q=sabias')).json.total, 0);
+  assert.equal((await s.call('GET', '/api/guias?tipo=campeon&rol=Top')).json.total, 1);
+  assert.equal((await s.call('GET', '/api/builds?limit=2&offset=1')).json.items.length, 2);
 });
 
 test('administración: exige token y valida', async t => {
@@ -112,6 +115,14 @@ test('subida de imágenes', async t => {
   assert.equal(g.json.item.imagen, ok.json.url);
   const evil = await s.call('POST', '/api/admin/guias', { body: guia({ id: 'otra-guia', imagen: '/uploads/../data/guias.json' }), token: TOKEN });
   assert.equal(evil.status, 400);
+});
+
+test('guías: el enlace de YouTube se valida', async t => {
+  const s = await boot(); t.after(s.close);
+  assert.equal((await s.call('POST', '/api/admin/guias', { body: guia({ youtube: 'https://evil.test/x' }), token: TOKEN })).status, 400);
+  const ok = await s.call('POST', '/api/admin/guias', { body: guia({ youtube: 'https://www.youtube.com/watch?v=abc123' }), token: TOKEN });
+  assert.equal(ok.status, 201);
+  assert.equal(ok.json.item.youtube, 'https://www.youtube.com/watch?v=abc123');
 });
 
 test('no se puede salir de la carpeta de imágenes', async t => {

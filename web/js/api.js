@@ -14,7 +14,7 @@ async function apiGet(path) {
 }
 
 /* Forma interna que usan las tarjetas: t=título, c=campeón, r=rol, k=tipo, d=descripción, src=imagen */
-const fromApi = x => ({ id: x.id, t: x.titulo, c: x.campeon, r: x.rol, k: x.tipo, d: x.descripcion, src: x.imagen || '', pdf: x.pdf || '', it: x.items || [], ru: x.runas || '', body: x.contenido || '' });
+const fromApi = x => ({ id: x.id, t: x.titulo, c: x.campeon, r: x.rol, k: x.tipo, d: x.descripcion, src: x.imagen || '', pdf: x.pdf || '', yt: x.youtube || '', it: x.items || [], ru: x.runas || '', body: x.contenido || '' });
 const fromLocal = x => ({ ...x, src: x.img ? IMG[x.img] : '' });
 
 async function loadCollection(kind) {

@@ -4,7 +4,8 @@
 .fil{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px}.fil select{width:auto;min-width:190px;border-radius:var(--r-s)}
 .fil input{width:auto;flex:1;min-width:220px;border-radius:var(--r-s);min-height:46px}.fil select{min-height:46px}
 .bg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.bc{display:block;text-decoration:none;background:var(--s1);border-radius:var(--r-l);overflow:hidden;transition:transform .2s}
+.bc{display:flex;flex-direction:column;background:var(--s1);border-radius:var(--r-l);overflow:hidden;transition:transform .2s}
+.bl{display:block;text-decoration:none;flex:1}
 .bc:hover{transform:translateY(-4px)}
 .art{height:150px;display:grid;place-items:center;position:relative}
 .art span{position:absolute;left:14px;top:12px;background:rgba(9,11,11,.7);color:var(--g);font-size:13px;font-weight:600;padding:2px 12px;border-radius:var(--r-s)}
@@ -33,4 +34,8 @@ summary{list-style:none;cursor:pointer;padding:16px 0;font:700 19px Outfit,sans-
 summary::-webkit-details-marker{display:none}summary::after{content:"+";color:var(--g)}details[open] summary::after{content:"\2212"}
 details p{margin:0 0 16px;color:var(--mu)}
 .more{font-size:24px;margin:56px 0 16px}
-.pdf-row{margin-top:24px}
+.acts{display:flex;flex-wrap:wrap;gap:8px;padding:0 18px 18px}
+.dt .acts,.dg .acts{padding:0;margin-top:24px;gap:12px}
+.btn.sm{min-height:38px;padding:6px 14px;font-size:14px}
+.btn.gh.yt{border:1px solid var(--bd)}.btn.gh.yt:hover{border-color:var(--g)}
+.btn.yt.off{color:var(--mu);border-style:dashed;cursor:not-allowed;pointer-events:none}

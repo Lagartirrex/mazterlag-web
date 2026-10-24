@@ -99,7 +99,8 @@
       </div>
       <label for="a-desc">Descripción corta</label><textarea id="a-desc" rows="2" maxlength="600">${esc(v.descripcion || '')}</textarea>
       ${isG ? `<label for="a-cont">Texto de la guía (opcional)</label><textarea id="a-cont" rows="4">${esc(v.contenido || '')}</textarea>
-      <label for="a-pdf">Archivo PDF ${v.pdf ? `(actual: <a href="${esc(safeUrl(v.pdf))}" target="_blank" rel="noopener">ver</a>; si subís otro, lo reemplaza)` : ''}</label><input id="a-pdf" type="file" accept="application/pdf">`
+      <label for="a-pdf">Archivo PDF ${v.pdf ? `(actual: <a href="${esc(safeUrl(v.pdf))}" target="_blank" rel="noopener">ver</a>; si subís otro, lo reemplaza)` : ''}</label><input id="a-pdf" type="file" accept="application/pdf">
+      <label for="a-yt">Video de YouTube de la guía (opcional; vacío = "Video próximamente")</label><input id="a-yt" type="url" maxlength="300" placeholder="https://www.youtube.com/watch?v=..." value="${esc(v.youtube || '')}">`
       : `<label for="a-items">Ítems (separados por coma)</label><input id="a-items" value="${esc((v.items || []).join(', '))}">`}
       <label for="a-img">Portada (imagen PNG, JPG o WEBP) ${v.imagen ? `(actual: <a href="${esc(safeUrl(v.imagen))}" target="_blank" rel="noopener">ver</a>)` : ''}</label><input id="a-img" type="file" accept="image/png,image/jpeg,image/webp">
       <label class="chk"><input id="a-pub" type="checkbox"${v.publicado !== false ? ' checked' : ''}> Publicada (visible en el sitio)</label>
@@ -120,7 +121,7 @@
         const img = $('#a-img').files[0];
         if (img) data.imagen = (await call('POST', `/api/admin/imagenes?carpeta=${kind}&nombre=${encodeURIComponent(data.id)}`, { raw: img, type: img.type })).ruta;
         if (isG) {
-          data.contenido = $('#a-cont').value.trim(); data.pdf = toPath(v.pdf);
+          data.contenido = $('#a-cont').value.trim(); data.pdf = toPath(v.pdf); data.youtube = $('#a-yt').value.trim();
           const pdf = $('#a-pdf').files[0];
           if (pdf) data.pdf = (await call('POST', `/api/admin/pdfs?nombre=${encodeURIComponent(data.id)}`, { raw: pdf, type: 'application/pdf' })).ruta;
         } else {

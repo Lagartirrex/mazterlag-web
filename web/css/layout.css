@@ -1,5 +1,4 @@
-/* Layout: franja demo, menú, secciones, cierre y pie de página */
-.demo{background:var(--v);font-size:14px;text-align:center;padding:6px 12px}
+/* Layout: menú, secciones, cierre y pie de página */
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;padding:14px 0;background:var(--k)}
 .nav{display:flex;align-items:center;gap:20px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 19px Outfit,sans-serif;margin-right:auto}

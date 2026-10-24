@@ -1,15 +1,29 @@
 /* Responsive (celular y tablet) y preferencia de menos movimiento */
 @media(max-width:860px){
 .nav{flex-wrap:wrap}.tabs{order:3;width:100%}
-.bg,.cg,.pil,.two,.lu,.lu2{grid-template-columns:1fr}.team{grid-template-columns:1fr 1fr}
+.bg,.pcols,.pil,.two,.lu,.lu2{grid-template-columns:1fr}.team{grid-template-columns:1fr 1fr}
 }
 @media(max-width:860px){.cols,#posts{grid-template-columns:1fr}.stats{margin-top:48px}}
 @media(max-width:860px){.dg{grid-template-columns:1fr}#posts{grid-template-columns:1fr 1fr}.tabs{flex-wrap:wrap;overflow:visible}.hero2 .art{width:100%;opacity:.45;height:460px}}
+/* Builds: tarjetas chicas, 4 o 5 por fila en pantallas grandes */
+@media(min-width:861px){
+body[data-lib="builds"] .bg{grid-template-columns:repeat(4,1fr);gap:14px}
+body[data-lib="builds"] .art:not(.im){height:110px}
+body[data-lib="builds"] .art svg.mas{width:72px;height:72px}
+body[data-lib="builds"] .art span{font-size:12px;padding:1px 10px}
+body[data-lib="builds"] .bb{padding:10px 12px 14px}
+body[data-lib="builds"] .bb h3{font-size:16px}
+body[data-lib="builds"] .bb p{font-size:13px;margin:4px 0 6px}
+body[data-lib="builds"] .bb small{font-size:13px}
+}
+@media(min-width:1000px){body[data-lib="builds"] .bg{grid-template-columns:repeat(5,1fr)}}
 @media(max-width:860px){
 /* Tarjetas de guías y builds más chicas en celular: 2 columnas, sin descripción */
 .bg{grid-template-columns:1fr 1fr;gap:12px}
 .bb{padding:10px 12px 14px}.bb h3{font-size:15px;line-height:1.2}.bb p{display:none}.bb small{font-size:13px}
 .art{height:110px}.art svg.mas{width:72px;height:72px}.art.im{height:auto;aspect-ratio:4/5}
-.fil{gap:8px}.fil input,.fil select{min-width:0;flex:1 1 45%}
+.acts{padding:0 12px 12px}.btn.sm{font-size:13px;padding:6px 10px}.fil{gap:8px}
+.price{padding:22px}.pbuy{border-left:0;padding-left:0;border-top:1px solid var(--bd);padding-top:24px}
+.sq-link{flex:1 1 42%}.fil input,.fil select{min-width:0;flex:1 1 45%}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}

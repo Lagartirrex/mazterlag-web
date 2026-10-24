@@ -1,4 +1,4 @@
-# MazterLag · Sitio web (modelo piloto)
+# MazterLag · Sitio web
 
 Sitio estático en HTML, CSS y JavaScript puro. Sin frameworks ni compilación: cada tipo de archivo está en su carpeta y no hay nada embebido (ni estilos, ni scripts, ni imágenes en base64).
 
@@ -60,7 +60,7 @@ mazterlag-web/
 │  └─ agenda.js       Lógica de la agenda y pago simulado
 ├─ css/
 │  ├─ base.css        Variables de marca, reset, tipografía, botones, formularios
-│  ├─ layout.css      Franja demo, menú, secciones, pie de página
+│  ├─ layout.css      Menú, secciones, pie de página
 │  ├─ components.css  Tarjetas, encabezados, biblioteca, detalle, posts, acordeón
 │  ├─ pages.css       Estilos propios de inicio, coaching, nosotros y agenda
 │  ├─ admin.css       Panel de administración
@@ -83,13 +83,12 @@ Cada HTML carga los CSS en el mismo orden (base, layout, components, pages, resp
 - **Agregar una guía o build:** sumá un objeto en `js/data.js` y guardá su imagen en `assets/img/` (referenciada en `IMG`). Aparece sola en la biblioteca, en el detalle y en los contadores del inicio.
 - **Cambiar colores:** variables en `:root` de `css/base.css` (`--k` negro, `--v` violeta, `--c` crema, `--g` verde).
 - **Cambiar el arte del hero:** reemplazá `assets/img/hero.jpg` (se usa en `css/pages.css`).
-- **Franja violeta "Modelo piloto":** borrá la línea `<div class="demo">` de cada HTML cuando ya no haga falta.
 
 ## Qué es de ejemplo y qué falta para producción
 - **Agenda propia (carpeta `futuro/`): pago simulado.** En producción el backend crea el cobro en Mercado Pago/PayPal, retiene el horario 15 minutos y confirma la reserva cuando recibe el aviso (webhook) de pago aprobado, validando la firma.
 - **Conexión de cuentas (Discord, Google, Riot): simulada.** Requiere OAuth en el backend. Riot Sign On exige una clave de producción aprobada por Riot.
 - **Horarios ocupados, textos del equipo, builds sin imagen y cantidades:** datos de ejemplo.
-- **Descarga en PDF:** demo.
+- **Guía de Urgot:** el PDF está en `assets/guias/` y el campo `yt` de `js/data.js` (enlace al video) está vacío hasta que haya video: mientras tanto el botón dice "Video próximamente".
 - **Detalle de guías:** usa una sola página con parámetros (`detalle.html?id=`). Para posicionar cada guía en Google conviene generar una página por guía (por ejemplo con un generador estático o desde el backend).
 - **Imágenes:** recortes de una captura del Instagram, con menos resolución de la ideal. Reemplazar por los originales. Las imágenes incluyen arte de Riot Games: revisar su política de uso antes de publicar el sitio con fines comerciales.
 - **Aviso legal:** el pie incluye que MazterLag no está avalado por Riot Games. Faltan las páginas de Términos, Privacidad y Cancelación/Reembolsos (los enlaces son `#`).

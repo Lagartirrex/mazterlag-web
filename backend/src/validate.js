@@ -16,8 +16,9 @@ const common = {
   publicado: { type: 'bool', default: true }
 };
 const PDF_OK = v => v === '' || /^\/uploads\/pdfs\/[A-Za-z0-9._-]+\.pdf$/.test(v) || /^https:\/\/[^\s]+\.pdf$/i.test(v);
+const YT_OK = v => v === '' || /^https:\/\/(www\.|m\.)?(youtube\.com|youtu\.be)\/[^\s]+$/i.test(v);
 const specs = {
-  guias: { ...common, pdf: { type: 'pdf', max: 300, default: '' } },
+  guias: { ...common, pdf: { type: 'pdf', max: 300, default: '' }, youtube: { type: 'youtube', max: 300, default: '' } },
   builds: {
     ...common,
     items: { type: 'list', max: 12, itemMax: 60, default: [] },
@@ -51,6 +52,11 @@ function validateEntry(kind, input, { partial = false } = {}) {
       const v = clean(raw);
       if (rule.type === 'pdf') {
         if (v.length > rule.max || !PDF_OK(v)) errors[key] = 'debe ser vacío, una ruta /uploads/pdfs/... .pdf o una URL https .pdf';
+        else value[key] = v;
+        continue;
+      }
+      if (rule.type === 'youtube') {
+        if (v.length > rule.max || !YT_OK(v)) errors[key] = 'debe ser vacío o un enlace https de YouTube';
         else value[key] = v;
         continue;
       }
