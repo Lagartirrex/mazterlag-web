@@ -1,0 +1,23 @@
+# Seguridad para hostings con Apache (Hostinger, cPanel, etc.). Subilo junto al sitio, en la carpeta pública.
+# Si tu API está en otro dominio, reemplazá "https:" en connect-src por ese dominio (ej: https://api.mazterlag.com).
+
+Options -Indexes
+
+# Forzar HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# No servir archivos ocultos ni de documentación
+<FilesMatch "^\.(?!well-known)|^_headers$|README\.md$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data: https:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; connect-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+  Header always set X-Frame-Options "DENY"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>

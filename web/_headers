@@ -1,0 +1,9 @@
+# Cabeceras de seguridad para Netlify y Cloudflare Pages (este archivo se sube junto al sitio).
+# Si tu API está en otro dominio, reemplazá "https:" en connect-src por ese dominio (ej: https://api.mazterlag.com).
+/*
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: https:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; connect-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains

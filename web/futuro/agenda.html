@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agenda | MazterLag</title>
+<meta name="description" content="Reservá tu sesión de coaching: elegí horario, completá tus datos y pagá para confirmar.">
+<link rel="icon" href="../assets/img/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Source+Sans+3:wght@400;600&display=swap">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/pages.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="demo">Pantalla para el futuro, todavía no está enlazada desde el sitio. Modelo piloto con el logo y el arte de MazterLag. Los textos y datos son de ejemplo.</div>
+<header class="top"><div class="wrap"><div class="nav">
+<a class="brand" href="../index.html"><img class="logo" src="../assets/img/logo.png" alt="" width="42" height="42">MazterLag</a>
+<nav class="tabs" aria-label="Principal"><a href="../index.html">Inicio</a><a href="../guias.html">Guías</a><a href="../builds.html">Builds</a><span class="soon">Torneos<em>Próximamente</em></span><a href="../coaching.html">Coaching</a><a href="../nosotros.html">Nosotros</a></nav>
+<a class="btn" href="#">Unirme al Discord</a>
+</div></div></header>
+
+<main class="wrap" id="main" tabindex="-1">
+<div class="pg">
+<a href="../coaching.html">Volver a Coaching</a>
+<div class="hd"><div><h1>Agenda</h1><p>Sesión de 1 hora con el coach por Discord. Tu horario queda confirmado cuando se acredita el pago.</p></div></div>
+<form id="form" class="card"><ol class="stp" id="stp"><li>Cuentas (opcional)</li><li>Horario</li><li>Datos</li></ol>
+<div class="step"><h2>Conectá tus cuentas</h2><p>Opcional. Conectarlas completa los datos y los verifica.</p>
+<div class="acc"><button type="button" data-k="d" aria-pressed="false">Continuar con Discord</button><button type="button" data-k="g" aria-pressed="false">Continuar con Google</button><button type="button" data-k="r" aria-pressed="false">Continuar con Riot</button></div></div>
+<div class="step"><h2>Elegí horario</h2><p>Horarios en hora de Argentina (UTC-3).</p>
+<div class="chips" id="days" role="group" aria-label="Día"></div>
+<div class="chips" id="slots" role="group" aria-label="Horario"><p class="hint">Elegí un día para ver los horarios.</p></div>
+<p id="sum" class="sum" aria-live="polite">Todavía no elegiste horario.</p></div>
+<div class="step"><h2>Tus datos</h2>
+<div class="two"><div><label for="rid">Riot ID</label><input id="rid" required autocomplete="off" placeholder="Nombre#TAG"></div><div><label for="dc">Usuario de Discord</label><input id="dc" required autocomplete="off"></div></div>
+<label for="em">Email</label><input id="em" type="email" required>
+<div class="two"><div><label for="rk">Rango actual</label><select id="rk"><option>Hierro</option><option>Bronce</option><option>Plata</option><option selected>Oro</option><option>Platino</option><option>Esmeralda</option><option>Diamante o más</option></select></div>
+<div><label for="rl">Rol principal</label><select id="rl"><option>Top</option><option>Jungla</option><option>Mid</option><option>ADC</option><option>Support</option></select></div></div>
+<label for="ob">¿Qué querés trabajar?</label><textarea id="ob" rows="3"></textarea>
+<p class="actions"><button class="btn big" id="go" type="submit">Continuar al pago</button></p></div>
+</form>
+
+<div class="card" id="pay" hidden><ol class="stp"><li class="done">Cuentas</li><li class="done">Horario</li><li class="done">Datos</li><li>Pago</li></ol>
+<div class="step"><h2>Pagá para confirmar tu horario</h2><p id="psum" class="psum"></p><p class="hint">Tu horario está retenido: <b id="tmr" class="tmr">15:00</b>. Si no se acredita el pago, lo liberamos.</p>
+<div class="chips" id="meth" role="group" aria-label="Medio de pago"><button type="button" aria-pressed="true">Mercado Pago</button><button type="button" aria-pressed="false">PayPal (USD)</button></div>
+<p class="total">$15.000</p><p class="hint">Pagás en la página segura del medio elegido. Nunca vemos los datos de tu tarjeta.</p>
+<p class="actions tight"><button class="btn big" id="paybtn" type="button">Pagar $15.000</button> <button class="btn gh" id="payfail" type="button">Probar pago rechazado (demo)</button></p><p id="pmsg" aria-live="polite"></p></div></div>
+<div class="ok" id="exp" hidden><h2>El horario venció</h2><p>Pasaron 15 minutos sin pago y liberamos el horario para otros alumnos. Podés elegir uno nuevo.</p><p class="cta"><button class="btn" id="again" type="button">Elegir otro horario</button></p></div>
+<div class="ok" id="done" hidden><h2>Reserva confirmada (demo)</h2><p id="dmsg"></p><p class="cta"><a class="btn" href="../index.html">Volver al inicio</a></p></div>
+</div>
+
+</main>
+
+<footer class="f"><div class="wrap">
+<div class="fr"><a class="brand" href="../index.html"><img class="logo" src="../assets/img/logo.png" alt="" width="42" height="42">MazterLag</a>
+<nav aria-label="Legales"><a href="#">Términos y condiciones</a><a href="#">Privacidad</a><a href="#">Cancelación y reembolsos</a></nav></div>
+<p class="rg">MazterLag no está avalado por Riot Games. League of Legends es una marca de Riot Games, Inc.</p>
+</div></footer>
+
+<script src="agenda.js" defer></script>
+</body>
+</html>

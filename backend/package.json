@@ -1,0 +1,14 @@
+{
+  "name": "mazterlag-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend de MazterLag: guías, builds, publicaciones de Instagram e información de Discord",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": { "node": ">=18.17" },
+  "license": "UNLICENSED"
+}

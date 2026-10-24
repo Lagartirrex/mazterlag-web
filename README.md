@@ -1,22 +1,24 @@
 # MazterLag — Página web
 
-Sitio web de MazterLag: inicio / quiénes somos, coaching y Build Cards.
+Sitio de MazterLag: inicio, nosotros, coaching, guías y builds, con panel de administración.
 
 ## Estructura
 ```
-index.html        Página principal
-assets/css/       Estilos
-assets/js/        Scripts
-assets/img/       Imágenes y logos
-modelo/           Modelo/diseño de referencia que pasó el usuario
+web/       Sitio estático (HTML + CSS + JS puro). Ver web/README.md
+backend/   API en Node.js 18+ (guías, builds, Instagram, Discord, enlaces). Ver backend/README.md
 ```
 
-## Cómo verla en local
-```
-python3 -m http.server 8000
-```
-y abrir http://localhost:8000
+El sitio funciona **con o sin backend** (`web/js/config.js` → `apiBase`).
 
-## Pendiente
-- Subir el modelo de la página a `modelo/` y armar la primera versión a partir de él.
-- Enlazar el generador de Build Cards (repo `generador-builds`, corre en PHP: no va en GitHub Pages).
+## Probar en local
+Solo el sitio:
+```
+cd web && python3 -m http.server 8000
+```
+Sitio + backend juntos:
+```
+cd backend && cp .env.example .env   # completá ADMIN_TOKEN y poné FRONTEND_DIR=../web
+npm start                            # http://localhost:3000
+```
+
+> En los README de cada parte, donde dice `mazterlag-web` / `mazterlag-backend`, acá son `web/` y `backend/`.

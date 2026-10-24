@@ -1,0 +1,175 @@
+{
+  "guias": [
+    {
+      "id": "abandonar-adc",
+      "titulo": "Cuándo abandonar a tu ADC",
+      "descripcion": "Temporada 16. Cuándo dejar de proteger a tu ADC y jugar para el resto del equipo.",
+      "rol": "Support",
+      "campeon": "General",
+      "tipo": "Fundamentos",
+      "imagen": "/uploads/guias/g1.jpg",
+      "contenido": "",
+      "publicado": true
+    },
+    {
+      "id": "irelia",
+      "titulo": "Cómo jugar Irelia y dominar la grieta",
+      "descripcion": "Temporada 16. Lo esencial para jugar Irelia con criterio.",
+      "rol": "Top",
+      "campeon": "Irelia",
+      "tipo": "Campeón",
+      "imagen": "/uploads/guias/g2.jpg",
+      "contenido": "",
+      "publicado": true
+    },
+    {
+      "id": "mordekaiser",
+      "titulo": "Cómo jugar Mordekaiser",
+      "descripcion": "Season 16 master en minutos: lo que tenés que saber para dominar la grieta.",
+      "rol": "Top",
+      "campeon": "Mordekaiser",
+      "tipo": "Campeón",
+      "imagen": "/uploads/guias/g3.jpg",
+      "contenido": "",
+      "publicado": true
+    },
+    {
+      "id": "kaisa",
+      "titulo": "Cómo jugar Kai'Sa",
+      "descripcion": "Temporada 16. Lo esencial para jugar Kai'Sa y dominar la grieta.",
+      "rol": "ADC",
+      "campeon": "Kai'Sa",
+      "tipo": "Campeón",
+      "imagen": "/uploads/guias/g5.jpg",
+      "contenido": "",
+      "publicado": true
+    },
+    {
+      "id": "garen-lore",
+      "titulo": "¿Sabías qué…? El secreto de Garen",
+      "descripcion": "Un dato de lore sobre Garen, Demacia y su familia.",
+      "rol": "Top",
+      "campeon": "Garen",
+      "tipo": "Lore",
+      "imagen": "/uploads/guias/g4.jpg",
+      "contenido": "",
+      "publicado": true
+    },
+    {
+      "id": "elise-lore",
+      "titulo": "¿Sabías qué…? El precio de la belleza de Elise",
+      "descripcion": "Un dato de lore sobre Elise y su pacto con Vilemaw.",
+      "rol": "Jungla",
+      "campeon": "Elise",
+      "tipo": "Lore",
+      "imagen": "/uploads/guias/g7.jpg",
+      "contenido": "",
+      "publicado": true
+    }
+  ],
+  "builds": [
+    {
+      "id": "rakan",
+      "titulo": "Build de Rakan",
+      "descripcion": "Runas, orden de habilidades, hechizos e ítems en una sola imagen.",
+      "rol": "Support",
+      "campeon": "Rakan",
+      "tipo": "Utilidad",
+      "imagen": "/uploads/builds/b1.jpg",
+      "contenido": "",
+      "publicado": true,
+      "items": [],
+      "runas": ""
+    },
+    {
+      "id": "thresh",
+      "titulo": "Build de Thresh",
+      "descripcion": "Runas, orden de habilidades, hechizos e ítems en una sola imagen.",
+      "rol": "Support",
+      "campeon": "Thresh",
+      "tipo": "Utilidad",
+      "imagen": "/uploads/builds/b2.jpg",
+      "contenido": "",
+      "publicado": true,
+      "items": [],
+      "runas": ""
+    },
+    {
+      "id": "ahri",
+      "titulo": "Build de Ahri",
+      "descripcion": "Build estándar para línea central (de ejemplo).",
+      "rol": "Mid",
+      "campeon": "Ahri",
+      "tipo": "Daño",
+      "imagen": "",
+      "contenido": "",
+      "publicado": true,
+      "items": [
+        "Ítem 1",
+        "Ítem 2",
+        "Ítem 3"
+      ],
+      "runas": "Electrocutar"
+    },
+    {
+      "id": "jinx",
+      "titulo": "Build de Jinx",
+      "descripcion": "Build para escalar en peleas largas (de ejemplo).",
+      "rol": "ADC",
+      "campeon": "Jinx",
+      "tipo": "Daño",
+      "imagen": "",
+      "contenido": "",
+      "publicado": true,
+      "items": [
+        "Ítem 1",
+        "Ítem 2",
+        "Ítem 3"
+      ],
+      "runas": "Pies veloces"
+    },
+    {
+      "id": "garen",
+      "titulo": "Build de Garen",
+      "descripcion": "Build resistente para línea superior (de ejemplo).",
+      "rol": "Top",
+      "campeon": "Garen",
+      "tipo": "Tanque",
+      "imagen": "",
+      "contenido": "",
+      "publicado": true,
+      "items": [
+        "Ítem 1",
+        "Ítem 2",
+        "Ítem 3"
+      ],
+      "runas": "Conquistador"
+    }
+  ],
+  "instagram": [
+    {
+      "titulo": "Cuándo abandonar a tu ADC",
+      "descripcion": "Cuándo abandonar a tu ADC",
+      "imagen": "/uploads/instagram/seed-1.jpg",
+      "enlace": "https://www.instagram.com/mazter_lag"
+    },
+    {
+      "titulo": "Cómo jugar Irelia",
+      "descripcion": "Cómo jugar Irelia",
+      "imagen": "/uploads/instagram/seed-2.jpg",
+      "enlace": "https://www.instagram.com/mazter_lag"
+    },
+    {
+      "titulo": "Cómo jugar Mordekaiser",
+      "descripcion": "Cómo jugar Mordekaiser",
+      "imagen": "/uploads/instagram/seed-3.jpg",
+      "enlace": "https://www.instagram.com/mazter_lag"
+    },
+    {
+      "titulo": "¿Sabías qué…? Garen",
+      "descripcion": "¿Sabías qué…? Garen",
+      "imagen": "/uploads/instagram/seed-4.jpg",
+      "enlace": "https://www.instagram.com/mazter_lag"
+    }
+  ]
+}

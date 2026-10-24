@@ -1,0 +1,15 @@
+/* Responsive (celular y tablet) y preferencia de menos movimiento */
+@media(max-width:860px){
+.nav{flex-wrap:wrap}.tabs{order:3;width:100%}
+.bg,.cg,.pil,.two,.lu,.lu2{grid-template-columns:1fr}.team{grid-template-columns:1fr 1fr}
+}
+@media(max-width:860px){.cols,#posts{grid-template-columns:1fr}.stats{margin-top:48px}}
+@media(max-width:860px){.dg{grid-template-columns:1fr}#posts{grid-template-columns:1fr 1fr}.tabs{flex-wrap:wrap;overflow:visible}.hero2 .art{width:100%;opacity:.45;height:460px}}
+@media(max-width:860px){
+/* Tarjetas de guías y builds más chicas en celular: 2 columnas, sin descripción */
+.bg{grid-template-columns:1fr 1fr;gap:12px}
+.bb{padding:10px 12px 14px}.bb h3{font-size:15px;line-height:1.2}.bb p{display:none}.bb small{font-size:13px}
+.art{height:110px}.art svg.mas{width:72px;height:72px}.art.im{height:auto;aspect-ratio:4/5}
+.fil{gap:8px}.fil input,.fil select{min-width:0;flex:1 1 45%}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}

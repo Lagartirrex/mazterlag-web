@@ -1,9 +1,10 @@
 # CLAUDE.md
 
 ## Contexto
-Página web de MazterLag (inicio / quiénes somos, coaching, Build Cards).
-Sitio estático (HTML + CSS + JS), sin build. Todo el texto en español rioplatense.
-El diseño sale del modelo que está en `modelo/`; respetarlo antes que inventar.
+Página web de MazterLag. `web/` es el sitio estático (sin frameworks ni build, nada embebido);
+`backend/` es la API en Node.js sin dependencias (`npm test` corre las pruebas).
+Todo el texto en español rioplatense. Respetar el diseño y la estructura existentes antes que inventar.
+Nunca subir `backend/.env` (tiene ADMIN_TOKEN e IG_ACCESS_TOKEN).
 
 ## Reglas
 El hilo principal coordina; el trabajo pesado va a sub-agentes

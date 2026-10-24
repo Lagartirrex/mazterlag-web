@@ -1,0 +1,19 @@
+/* Layout: franja demo, menú, secciones, cierre y pie de página */
+.demo{background:var(--v);font-size:14px;text-align:center;padding:6px 12px}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;padding:14px 0;background:var(--k)}
+.nav{display:flex;align-items:center;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 19px Outfit,sans-serif;margin-right:auto}
+.logo{width:42px;height:42px;border-radius:50%;object-fit:contain;display:block}
+.tabs{display:flex;gap:6px;overflow-x:auto}
+.tabs a,.tabs .soon{white-space:nowrap;text-decoration:none;color:var(--mu);padding:8px 14px;border-radius:var(--r-s);font-weight:600;font-size:15px}
+.tabs a:hover{color:var(--c)}.tabs a[aria-current]{color:var(--c);text-decoration:underline;text-decoration-color:var(--g);text-decoration-thickness:2px;text-underline-offset:8px}
+.tabs .soon{opacity:.6}.tabs em{font-style:normal;font-size:12px;color:var(--g);margin-left:6px}
+.tabs a{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+.sec{padding:88px 0 0}
+.t{font-size:clamp(28px,4vw,44px);margin-bottom:10px}
+.sub{margin:0 0 28px;color:var(--mu);max-width:58ch}
+.join{margin:104px 0 72px;text-align:center;padding:0 20px}
+.join h2{font-size:clamp(28px,4.5vw,48px);margin-bottom:12px}.join p{color:var(--l);max-width:44ch;margin:0 auto 24px}
+footer.f{padding:36px 0;border-top:1px solid var(--bd);color:var(--mu);font-size:14px}
+.fr{display:flex;flex-wrap:wrap;gap:16px 36px;justify-content:space-between;align-items:center}.fr nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+.rg{margin:16px 0 0;font-size:13px}
