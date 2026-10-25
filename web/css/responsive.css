@@ -40,9 +40,9 @@ html.js-reveal .rv.rv-in{opacity:1;transform:none}
 .js-nav .menu{display:none}
 .js-nav .nav.open .menu{display:flex;flex-direction:column;position:fixed;inset:0;z-index:1;background:var(--k);padding:calc(78px + env(safe-area-inset-top,0px)) 20px calc(28px + env(safe-area-inset-bottom,0px));overflow-y:auto;overscroll-behavior:contain}
 .js-nav .menu .tabs{order:0;width:100%;margin:0;padding:0;flex-direction:column;gap:0;overflow:visible}
-.js-nav .menu .tabs a,.js-nav .menu .tabs .soon{display:flex;justify-content:flex-start;align-items:center;min-height:60px;padding:8px 4px;border-bottom:1px solid var(--bd);border-radius:0;font:400 36px/1 var(--fd);letter-spacing:.04em;color:var(--c);text-decoration:none}
+.js-nav .menu .tabs a{display:flex;justify-content:flex-start;align-items:center;min-height:60px;padding:8px 4px;border-bottom:1px solid var(--bd);border-radius:0;font:400 36px/1 var(--fd);letter-spacing:.04em;color:var(--c);text-decoration:none}
 .js-nav .menu .tabs a[aria-current]{color:var(--g);text-decoration:none}
-.js-nav .menu .tabs .soon{opacity:.55;gap:12px}.js-nav .menu .tabs .soon em{font:600 13px var(--fs);letter-spacing:.08em;text-transform:uppercase;margin:0}
+.js-nav .menu .tabs a{gap:12px}.js-nav .menu .tabs em{color:var(--g);font:600 13px var(--fs);letter-spacing:.08em;text-transform:uppercase;margin:0}
 .js-nav .menu>.btn{margin-top:28px;min-height:56px;font-size:17px}
 html.nav-open{overflow:hidden}
 }
@@ -135,5 +135,5 @@ footer.f{padding:32px 0 28px;font-size:16px}
 .lc{grid-template-columns:64px 1fr}
 .bb{padding:8px 10px 10px}
 .sq-link{font-size:15px;gap:8px;padding:10px 8px}
-.js-nav .menu .tabs a,.js-nav .menu .tabs .soon{font-size:32px}
+.js-nav .menu .tabs a{font-size:32px}
 }

@@ -171,11 +171,11 @@ function createApp(config, { fetchImpl = fetch } = {}) {
     return full === root || full.startsWith(root + path.sep) ? full : null;
   }
 
-  async function serveFile(req, res, file, headers = {}) {
+  async function serveFile(req, res, file, headers = {}, status = 200) {
     let st;
     try { st = await fs.promises.stat(file); } catch { return false; }
     if (!st.isFile()) return false;
-    res.writeHead(200, { 'Content-Type': MIME[path.extname(file).toLowerCase()] || 'application/octet-stream', 'Content-Length': st.size, 'X-Content-Type-Options': 'nosniff', ...headers });
+    res.writeHead(status, { 'Content-Type': MIME[path.extname(file).toLowerCase()] || 'application/octet-stream', 'Content-Length': st.size, 'X-Content-Type-Options': 'nosniff', ...headers });
     if (req.method === 'HEAD') { res.end(); return true; }
     fs.createReadStream(file).pipe(res);
     return true;
@@ -245,6 +245,9 @@ function createApp(config, { fetchImpl = fetch } = {}) {
           const ok = await serveFile(req, res, file, isHtml ? { 'Content-Security-Policy': csp(), 'X-Frame-Options': 'DENY', 'Cache-Control': 'no-cache' } : { 'Cache-Control': 'public, max-age=3600' });
           if (ok) return;
         }
+        // Archivo inexistente: página 404 del sitio (si existe)
+        const nf = safeJoin(config.frontendDir, '404.html');
+        if (nf && await serveFile(req, res, nf, { 'Content-Security-Policy': csp(), 'X-Frame-Options': 'DENY', 'Cache-Control': 'no-cache' }, 404)) return;
       }
       throw new HttpError(404, 'No encontrado');
     } catch (e) {

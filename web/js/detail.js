@@ -13,7 +13,9 @@
 
   if (!x) {
     document.title = 'No encontrado | MazterLag';
-    $('#det').innerHTML = `<nav class="bcr" aria-label="Ruta"><a href="index.html">Inicio</a><span>/</span><a href="${cfg.page}">${cfg.name}</a></nav><h1>No encontramos esta página</h1><p><a href="${cfg.page}">Volver a ${cfg.name}</a></p>`;
+    $('#det').innerHTML = `<nav class="bcr" aria-label="Ruta"><a href="index.html">Inicio</a><span>/</span><a href="${cfg.page}">${cfg.name}</a></nav>
+    <div class="estado"><div class="pa" data-m="#512C7D" data-v="2" data-s="140"></div><span class="chip">No encontrado</span><h1>No encontramos esa ${key === 'builds' ? 'build' : 'guía'}</h1><p>Puede que el enlace esté mal escrito o que ya no exista.</p><div class="acts"><a class="btn big" href="guias.html">Ver guías</a><a class="btn big gh yt" href="builds.html">Ver builds</a></div></div>`;
+    initMascots($('#det'));
     return;
   }
 

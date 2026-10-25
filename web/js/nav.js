@@ -17,7 +17,6 @@
     menu.id = 'menu';
     tabs.before(menu);
     while (menu.nextSibling) menu.append(menu.nextSibling);
-    menu.querySelectorAll('.soon').forEach(s => s.setAttribute('aria-disabled', 'true'));
 
     const btn = document.createElement('button');
     btn.type = 'button';

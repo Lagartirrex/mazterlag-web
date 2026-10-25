@@ -3,6 +3,9 @@
 
 Options -Indexes
 
+# Página de error 404 propia
+ErrorDocument 404 /404.html
+
 # Forzar HTTPS
 RewriteEngine On
 RewriteCond %{HTTPS} off

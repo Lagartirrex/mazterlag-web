@@ -79,6 +79,9 @@ mazterlag-web/
 ```
 Cada HTML carga los CSS en el mismo orden (base, layout, components, pages, responsive) y solo los JS que necesita.
 
+## Página de error
+`404.html` es la página que se muestra ante una dirección inexistente. Usa rutas absolutas (`/css/...`) porque se sirve en cualquier URL. Apache la toma con `ErrorDocument 404 /404.html` (en `.htaccess`); Netlify y Cloudflare Pages usan `404.html` automáticamente, sin configurar nada. El backend (con `FRONTEND_DIR`) también la devuelve con estado 404.
+
 ## Tareas comunes
 - **Agregar una guía o build:** sumá un objeto en `js/data.js` y guardá su imagen en `assets/img/` (referenciada en `IMG`). Aparece sola en la biblioteca, en el detalle y en los contadores del inicio.
 - **Cambiar colores:** variables en `:root` de `css/base.css` (`--k` negro, `--v` violeta, `--c` crema, `--g` verde).

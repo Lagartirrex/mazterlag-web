@@ -274,6 +274,19 @@ test('sirve el sitio web y no deja salir de su carpeta', async t => {
   for (const p of ['/../secreto.txt', '/%2e%2e/secreto.txt', '/..%2fsecreto.txt']) assert.equal((await fetch(s.base + p)).status, 404, p);
 });
 
+test('sitio web: archivo inexistente devuelve 404.html y la API sigue en JSON', async t => {
+  const tmp = fs.mkdtempSync(path.join(require('os').tmpdir(), 'mzl-'));
+  const web = path.join(tmp, 'web'); fs.mkdirSync(web, { recursive: true });
+  fs.writeFileSync(path.join(web, 'index.html'), '<h1>hola</h1>');
+  const s = await boot({ FRONTEND_DIR: web }, { tmp }); t.after(s.close);
+  assert.equal((await fetch(s.base + '/no-existe')).status, 404); // sin 404.html: JSON de siempre
+  fs.writeFileSync(path.join(web, '404.html'), '<h1>Página no encontrada</h1>');
+  const r = await fetch(s.base + '/algo/no-existe.html');
+  assert.equal(r.status, 404); assert.match(r.headers.get('content-type'), /text\/html/); assert.match(await r.text(), /Página no encontrada/);
+  const api = await fetch(s.base + '/api/no-existe');
+  assert.equal(api.status, 404); assert.match(api.headers.get('content-type'), /json/);
+});
+
 test('administración: la clave corta se rechaza', async t => {
   const s = await boot({ ADMIN_TOKEN: 'corta' }); t.after(s.close);
   const r = await s.call('POST', '/api/admin/guias', { body: guia(), token: 'corta' });
